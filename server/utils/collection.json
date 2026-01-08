@@ -1,0 +1,223 @@
+{
+  "info": {
+    "_postman_id": "7b028a53-e401-4f0f-9c2d-629744305df2",
+    "name": "HOTEL API OUT Copy",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "HMS_APIOUT",
+      "item": [
+        {
+          "name": "Hotel Search by search id",
+          "id": "5bbd9068-7e34-4b1b-97ce-cc12c9fc11e4",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": { "key": "apikey", "value": "{{apikey}}" }
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"searchId\": \"hsid7055085876\"\n}"
+            },
+            "url": "https://{{host}}/hms/v1/hotel-search",
+            "description": "This will return all the search Ids."
+          },
+          "response": []
+        },
+        {
+          "name": "Hotel Search List",
+          "id": "1c142892-5e4d-4f32-bcda-943f2282211d",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": { "key": "apikey", "value": "{{apikey}}" }
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"searchQuery\": {\n        \"checkinDate\": \"2021-05-04\",\n        \"checkoutDate\": \"2021-05-05\",\n        \"roomInfo\": [\n            {\n                \"numberOfAdults\": 1,\n                \"numberOfChild\":1,\n                \"childAge\":[6]\n            }\n        ],\n        \"searchCriteria\": {\n            \"city\": \"4451\",\n            \"nationality\": \"106\",\n            \"currency\": \"INR\"\n        },\n        \"searchPreferences\": {\n            \"ratings\": [\n                3,\n                4,\n                5\n            ],\n            \"fsc\": true\n        }\n    },\n    \"sync\": false\n}"
+            },
+            "url": "https://{{host}}/hms/v1/hotel-searchquery-list",
+            "description": "This will return all the search Ids."
+          },
+          "response": []
+        },
+        {
+          "name": "Hotel Detail Search",
+          "id": "639786ce-1336-4ba9-aa8e-28f065e1f476",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": { "key": "apikey", "value": "{{apikey}}" }
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"id\": \"hsid7055085876--2090707905\"\n}"
+            },
+            "url": "https://{{host}}/hms/v1/hotelDetail-search",
+            "description": "This will return the detailed response of a hotel comprises up of Room Ids as well."
+          },
+          "response": []
+        },
+        {
+          "name": "Hotel Cancellation Policy",
+          "id": "49847664-6f55-475a-b74c-e841f15dfe97",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": { "key": "apikey", "value": "{{apikey}}" }
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\t\"id\":\"hsid2364874688--2090707905\",\n\t\t\"optionId\":\"1_46343474-78_64050\"\n}"
+            },
+            "url": "https://{{host}}/hms/v1/hotel-cancellation-policy"
+          },
+          "response": []
+        },
+        {
+          "name": "Hotel Review",
+          "id": "200a2481-22ca-49f2-b8e2-aeca32e95e99",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": { "key": "apikey", "value": "{{apikey}}" }
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\t\"hotelId\":\"hsid7802527056--2090707905\",\n\t\t\"optionId\":\"1_46343474-78_33429\"\n}"
+            },
+            "url": "https://{{host}}/hms/v1/hotel-review",
+            "description": "This will return the detailed response of a hotel comprises up of Room Ids as well."
+          },
+          "response": []
+        },
+        {
+          "name": "Hotel Booking",
+          "id": "31f5ca23-755d-4efe-acd2-bb53de28a6ac",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": { "key": "apikey", "value": "{{apikey}}" }
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"bookingId\": \"TJS205200048111\",\n    \"roomTravellerInfo\": [\n        {\n            \"travellerInfo\": [\n                {\n                    \"fN\": \"testuser\",\n                    \"lN\": \"sdfsd\",\n                    \"ti\": \"Mr\",\n                    \"pt\": \"ADULT\",\n                    \"pan\": \"ABCDE1234F\"\n                },\n                {\n                    \"fN\": \"testtwo\",\n                    \"lN\": \"sdfsd\",\n                    \"ti\": \"Master\",\n                    \"pt\": \"CHILD\"\n                }\n            ]\n        }\n    ],\n    \"deliveryInfo\": {\n        \"emails\": [\n            \"xyz@technogramsolutions.com\"\n        ],\n        \"contacts\": [\n            \"1234567890\"\n        ],\n        \"code\": [\n            \"+91\"\n        ]\n    },\n    \"type\": \"HOTEL\",\n    \"paymentInfos\": [\n        {\n            \"amount\": 893.80\n        }\n    ]\n}"
+            },
+            "url": "https://{{host}}/oms/v1/hotel/book",
+            "description": "This will return the detailed response of a hotel comprises up of Room Ids as well."
+          },
+          "response": []
+        },
+        {
+          "name": "Hotel Booking Details",
+          "id": "7559d353-e5f6-413f-b3e2-aed5c5067e2c",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": { "key": "apikey", "value": "{{apikey}}" }
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"bookingId\":\"TJS205200048111\"\n}"
+            },
+            "url": "https://{{host}}/oms/v1/hotel/booking-details"
+          },
+          "response": []
+        },
+        {
+          "name": "Hotel Booking Cancellation",
+          "id": "e831b413-2a99-4601-9e7d-5a2eccdc2d9a",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": { "key": "apikey", "value": "{{apikey}}" }
+            },
+            "method": "POST",
+            "header": [],
+            "url": "https://{{host}}/oms/v1/hotel/cancel-booking/TJS205200048111"
+          },
+          "response": []
+        },
+        {
+          "name": "City Static Data",
+          "id": "1b819944-1770-4e38-ae81-f1d0a39c152e",
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": { "key": "apikey", "value": "{{apikey}}" }
+            },
+            "method": "GET",
+            "header": [],
+            "url": "https://{{host}}/hms/v1/static-cities/"
+          },
+          "response": []
+        }
+      ],
+      "id": "76a30477-a351-401f-a869-8fb08dc16437"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+node_modules
+.env
+.env.local
+KFOTPFirebase.json
+KFTranslationAPIKey.json
+translation-service.json
+.DS_Store
+dist
+.vscode

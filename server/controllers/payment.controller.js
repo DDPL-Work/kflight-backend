@@ -1,8 +1,8 @@
 const crypto = require("crypto");
 const Booking = require("../models/booking.model.js");
 const razorpay = require("../config/razorpay");
-console.log("🔥 Razorpay in controller:", razorpay);
-console.log("razorpay.orders at import time:", razorpay.orders);
+// console.log("🔥 Razorpay in controller:", razorpay);
+// console.log("razorpay.orders at import time:", razorpay.orders);
 
 const createOrder = async (req, res) => {
   try {

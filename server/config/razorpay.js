@@ -16,6 +16,6 @@ const razorpay = new Razorpay({
   key_secret: keySecret,
 });
 
-console.log("✅ Razorpay singleton initialized");
+// console.log("✅ Razorpay singleton initialized");
 
 module.exports = razorpay;

@@ -27,13 +27,25 @@ app.use(morgan('combined'));
 app.use(express.json());
 app.use(updateSessionActivity);
 
+// const limiter = rateLimit({
+//   windowMs: 15 * 60 * 1000,
+//   max: 1000,
+//   message: "no more",
+//   standardHeaders: true,
+//   legacyHeaders: false,
+//   ipFromHeader: "x-forwarded-for"   // FIXES THE ERROR
+// });
+
+
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
+  windowMs: 15 * 60 * 1000, // 15 minutes
   max: 1000,
-  message: "no more",
+  message: {
+    success: false,
+    message: "Too many requests. Please try again later.",
+  },
   standardHeaders: true,
   legacyHeaders: false,
-  ipFromHeader: "x-forwarded-for"   // FIXES THE ERROR
 });
 
 app.use(limiter);
